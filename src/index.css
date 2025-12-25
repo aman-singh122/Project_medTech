@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Government Healthcare System Design System */
+/* Colors inspired by Indian Government websites and Digital India */
+
+@layer base {
+  :root {
+    /* Core backgrounds and text */
+    --background: 0 0% 98%;
+    --foreground: 220 25% 10%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    /* Primary - Government Navy Blue */
+    --primary: 220 60% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Light Blue Gray */
+    --secondary: 210 30% 95%;
+    --secondary-foreground: 220 25% 20%;
+
+    /* Muted surfaces */
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 10% 40%;
+
+    /* Accent - India Green */
+    --accent: 145 63% 32%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive / Error */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 220 60% 40%;
+
+    --radius: 0.5rem;
+
+    /* Indian Flag Colors */
+    --saffron: 24 95% 53%;
+    --india-green: 145 63% 32%;
+
+    /* Warning / Prototype Banner */
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 10%;
+
+    /* Success */
+    --success: 145 63% 32%;
+    --success-foreground: 0 0% 100%;
+
+    /* Info */
+    --info: 200 90% 40%;
+    --info-foreground: 0 0% 100%;
+
+    /* Sidebar */
+    --sidebar-background: 220 60% 20%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 220 60% 20%;
+    --sidebar-accent: 220 50% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 40% 30%;
+    --sidebar-ring: 200 90% 50%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 200 70% 50%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 220 20% 20%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 145 50% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 200 70% 50%;
+
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 200 70% 50%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 200 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Open Sans', 'Roboto', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', 'Open Sans', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-india {
+    @apply bg-gradient-to-r from-saffron via-white to-india-green;
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary to-info;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .btn-gov {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  }
+}
+
+/* Custom scrollbar for government portal aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/40 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/60;
+}
+
+/* Print styles for OPD slips */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
